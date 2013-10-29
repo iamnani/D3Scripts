@@ -17,7 +17,15 @@
 				.text("hello  this is first one..");
 			 
 			 var width=500;
-			 var arr=[10,20,30];
+			 var arr=[5,10, 15, 20, 22, 25, 26, 30, 36];
+			 
+			 var color = d3.scale.linear()
+			 					.domain([0, d3.max(arr)])
+			 					.range(["green", "blue"]);
+			 
+			 var xScale = d3.scale.linear()
+			 					.domain([0, d3.max(arr)])
+			 					.range([0, width]);
 			 
 			 
 			  var canvas = d3.select("body")
@@ -25,11 +33,20 @@
 			 			  .attr("width", width)
 			 			  .attr("height", 500); 
 			 
-			 var circle= canvas.append("circle")
+			 /* var circle= canvas.append("circle")
 			 				.attr("cx", 100)
 			 				.attr("cy", 200)
 			 				.attr("r", 20)
-			 				.attr("fill", "red");
+			 				.attr("fill", "red"); */
+			 
+			 var bars = canvas.selectAll("rect")
+			 				.data(arr)
+			 				.enter().append("rect")
+			 					.attr("x", 10)
+			 					.attr("y", function(val, i){ return i*25;})
+			 					.attr("height", 20)
+			 					.attr("width", function(val){return xScale(val); })
+			 					.attr("fill", function(val){ return color(val);});
 			 
 	
 	</script>
