@@ -11,7 +11,6 @@
 </head>
 <body>
 <script type="text/javascript">
-This is test sample. zdfgsdf
 	
 			 d3.select("body")
 				.append("p")
