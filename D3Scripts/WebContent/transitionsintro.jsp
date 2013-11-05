@@ -22,7 +22,7 @@
 						   .attr("cy", 100)
 						   .attr("r", 7);
 			
-			circle.transition()
+			/* circle.transition()
 					.duration(1500)
 					.attr("cx", 120)
 					.attr("r", 28)
@@ -33,8 +33,12 @@
 					.attr("cx", 220)
 					.attr("r", 7)
 					.attr("fill", "black")
+					; */
+					circle.transition()
+					.duration(1500)
+					.attr("cx", 200)
+					.each("end", function(){ d3.select(this).attr("fill", "red"); })
 					;
-			 
 	
 	</script>
 
