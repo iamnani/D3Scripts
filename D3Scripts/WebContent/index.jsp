@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,12 +10,8 @@
 
 </head>
 <body>
-<script type="text/javascript">
+	<script type="text/javascript">
 
-			 d3.select("body")
-				.append("p")
-				.text("hello  this is first one..");
-			 
 			 var width=500;
 			 var arr=[5,10, 15, 20, 22, 25, 26, 30, 36];
 			 
@@ -27,11 +23,17 @@
 			 					.domain([0, d3.max(arr)])
 			 					.range([0, width]);
 			 
+			 var xAxis = d3.svg.axis()
+							.scale(xScale)
+							.ticks(10); 
 			 
 			  var canvas = d3.select("body")
 			 			  .append("svg")
 			 			  .attr("width", width)
-			 			  .attr("height", 500); 
+			 			  .attr("height", 500)
+			 			  .append("g")
+			 			  .attr("transform", "translate(20, 20)"); 
+			  
 			 
 			 /* var circle= canvas.append("circle")
 			 				.attr("cx", 100)
@@ -47,6 +49,10 @@
 			 					.attr("height", 20)
 			 					.attr("width", function(val){return xScale(val); })
 			 					.attr("fill", function(val){ return color(val);});
+			 				
+			 canvas.append("g")
+			 		.attr("transform", "translate(0, 300)")
+			 		.call(xAxis);
 			 
 	
 	</script>
