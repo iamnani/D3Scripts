@@ -1,0 +1,42 @@
+{
+    "name": "Max",
+    "value": 100,
+    "children": [
+        {
+            "name": "Naveen",
+            "value": 75,
+            "children": [
+                {
+                    "name": "naveen1",
+                    "value": 25
+                },
+                {
+                    "name": "naveen2",
+                    "value": 25
+                },
+                {
+                    "name": "naveen1",
+                    "value": 25
+                }
+            ]
+        },
+        {
+            "name": "Deepika",
+            "value": 50,
+            "children": [
+                {
+                    "name": "Deepika1",
+                    "value": 25
+                },
+                {
+                    "name": "Deepika2",
+                    "value": 25
+                }
+            ]
+        },
+        {
+            "name": "Jakkani",
+            "value": 75
+        }
+    ]
+}
